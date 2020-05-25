@@ -29,8 +29,8 @@ container.resolve(function (users, _, admin, homePage) {
   function SetupExpress() {
     const app = express();
     const server = http.createServer(app);
-    server.listen(process.env.PORT || 3333, function () {
-      console.log("Server running on port 3333");
+    server.listen(process.env.PORT || 3200, function () {
+      console.log("Server running on port 3200");
     });
 
     ConfigureExpress(app);
