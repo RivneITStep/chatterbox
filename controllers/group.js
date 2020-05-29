@@ -7,7 +7,8 @@ module.exports = function () {
       // router.get("/logout", this.logout);
     },
     groupPage: function (req, res) {
-      res.render("groupchat/group");
+      const name = req.params.name;
+      res.render("groupchat", { title: "Chatterbox Group", name: name });
     },
   };
 };
