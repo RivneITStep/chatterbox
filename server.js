@@ -10,6 +10,7 @@ const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const passport = require("passport");
+const socketIO = require("socket.io");
 
 container.resolve(function (users, _, admin, homePage, group) {
   mongoose.set("useFindAndModify", false);
@@ -29,11 +30,13 @@ container.resolve(function (users, _, admin, homePage, group) {
   function SetupExpress() {
     const app = express();
     const server = http.createServer(app);
+    const io = socketIO(server);
     server.listen(process.env.PORT || 3200, function () {
       console.log("Server running on port 3200");
     });
 
     ConfigureExpress(app);
+    require("./socket/groupchet")(io);
 
     const router = require("express-promise-router")();
     users.SetRouting(router);
