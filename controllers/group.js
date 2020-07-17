@@ -8,7 +8,7 @@ module.exports = function () {
     },
     groupPage: function (req, res) {
       const name = req.params.name;
-      res.render("groupchat", { title: "Chatterbox Group", name: name });
+      res.render("groupchat", { title: "Chatterbox Group", groupName: name });
     },
   };
 };

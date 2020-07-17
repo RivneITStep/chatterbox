@@ -7,7 +7,7 @@
             <div class="addressee-block">
               <div class="addressee-content">
                 <img src="../img/User_Avatar.png" alt="user_avatar" />
-                <h2><%= name %></h2>
+                <h2><%= groupName %></h2>
               </div>
             </div>
           </section>
@@ -74,6 +74,11 @@
 
                 <div class="send-message">
                   <div class="messages-form">
+                    <input
+                      type="hidden"
+                      id="groupName"
+                      value="<%= groupName %>"
+                    />
                     <input
                       type="txt"
                       id="msg"
