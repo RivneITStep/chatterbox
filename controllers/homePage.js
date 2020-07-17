@@ -2,6 +2,7 @@ module.exports = function (async, User, Group, _) {
   return {
     SetRouting: function (router) {
       router.get("/home", this.indexPage);
+      router.get("/logout", this.logout);
     },
     indexPage: function (req, res) {
       async.parallel(
@@ -56,6 +57,12 @@ module.exports = function (async, User, Group, _) {
           });
         }
       );
+    },
+    logout: function (req, res) {
+      req.logout();
+      req.session.destroy((err) => {
+        res.redirect("/");
+      });
     },
   };
 };
