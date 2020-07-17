@@ -1,4 +1,4 @@
-module.exports = function (async, Group, _) {
+module.exports = function (async, User, Group, _) {
   return {
     SetRouting: function (router) {
       router.get("/home", this.indexPage);
@@ -25,6 +25,13 @@ module.exports = function (async, Group, _) {
               }
             );
           },
+          function (callback) {
+            User.findOne({ username: req.user.username })
+              .populate("request.userId")
+              .exec((err, result) => {
+                callback(err, result);
+              });
+          },
         ],
         (err, results) => {
           const res1 = results[0];
@@ -41,7 +48,7 @@ module.exports = function (async, Group, _) {
 
           res.render("index", {
             title: "Chatterbox - Home",
-            // user: req.user,
+            user: req.user,
             chunks: dataChunk,
             descriptions: descriptionSort,
             // data: res3,

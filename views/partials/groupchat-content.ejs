@@ -16,15 +16,6 @@
               <div class="messages-block">
                 <div class="content-messages">
                   <div class="input-message">
-                    <img src="../img/User_Avatar.png" alt="user_avatar" />
-                    <div class="msg" style="margin: 10px 0 0 10px;">
-                      <p class="text">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                      <p class="time">11:00</p>
-                    </div>
-                  </div>
-                  <div class="input-message">
                     <img
                       src="../img/User_Avatar.png"
                       alt="user_avatar"
@@ -35,16 +26,6 @@
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Lorem ipsum dolor sit amet consectetur adipisicing
                         elit. Numquam, autem.
-                      </p>
-                      <p class="time">11:00</p>
-                    </div>
-                  </div>
-                  <div class="input-message">
-                    <img src="../img/User_Avatar.png" alt="user_avatar" />
-                    <div class="msg" style="margin: 10px 0 0 10px;">
-                      <p class="text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Numquam, autem.
                       </p>
                       <p class="time">11:00</p>
                     </div>
@@ -78,6 +59,12 @@
                       type="hidden"
                       id="groupName"
                       value="<%= groupName %>"
+                    />
+                    <input
+                      type="hidden"
+                      name="sender"
+                      id="sender"
+                      value="<%= user.username %>"
                     />
                     <input
                       type="txt"

@@ -12,6 +12,7 @@ module.exports = function (io, Users) {
       io.to(message.groupName).emit("newMessage", {
         text: message.text,
         groupName: message.groupName,
+        from: message.sender,
       });
       callback();
     });

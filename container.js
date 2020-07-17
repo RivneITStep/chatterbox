@@ -8,6 +8,7 @@ const Dependecies = [
   ["mongoose", "mongoose"],
   ["passport", "passport"],
   ["Group", "./models/group"],
+  ["User", "./models/user"],
   ["formidable", "formidable"],
   ["async", "async"],
   ["validator", "express-validator"],
