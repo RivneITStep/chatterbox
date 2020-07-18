@@ -15,21 +15,20 @@
             <section class="content-message-block">
               <div class="messages-block">
                 <div class="content-messages">
-                  <div class="input-message">
-                    <img
+                  <div class="input-message" id="messages"></div>
+
+                  <script id="message-template" type="text/template">
+                     <img
                       src="../img/User_Avatar.png"
                       alt="user_avatar"
                       style="width: 500;"
                     />
+                    <div>{{ sender }}</div>
                     <div class="msg" style="margin: 10px 0 0 10px;">
-                      <p class="text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Numquam, autem.
-                      </p>
+                      <p class="text">{{ text }}</p>
                       <p class="time">11:00</p>
                     </div>
-                  </div>
+                  </script>
 
                   <!-- start output messages -->
                   <div class="output-message">

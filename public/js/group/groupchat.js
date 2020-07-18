@@ -15,7 +15,12 @@ $(document).ready(function () {
   });
 
   socket.on("newMessage", function (data) {
-    console.log(data);
+    let template = $("#message-template").html();
+    let message = Mustache.render(template, {
+      text: data.text,
+      sender: data.from,
+    });
+    $("#messages").append(message);
   });
 
   $("#messages-form").on("submit", function (e) {
